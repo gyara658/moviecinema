@@ -1,0 +1,16 @@
+current directory: /Users/miyamotosatoshi/Desktop/Screen_shot/rails_traning/moviecinema/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+/Users/miyamotosatoshi/.rbenv/versions/2.7.6/bin/ruby -I /Users/miyamotosatoshi/.rbenv/versions/2.7.6/lib/ruby/site_ruby/2.7.0 -r ./siteconf20220617-50198-1rt9tos.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /Users/miyamotosatoshi/Desktop/Screen_shot/rails_traning/moviecinema/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= clean
+
+current directory: /Users/miyamotosatoshi/Desktop/Screen_shot/rails_traning/moviecinema/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\=
+compiling unf.cc
+linking shared-object unf_ext.bundle
+
+current directory: /Users/miyamotosatoshi/Desktop/Screen_shot/rails_traning/moviecinema/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20220617-50198-1o0is1v

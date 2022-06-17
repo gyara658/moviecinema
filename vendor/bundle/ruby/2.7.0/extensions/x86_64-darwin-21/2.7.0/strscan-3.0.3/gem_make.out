@@ -1,0 +1,16 @@
+current directory: /Users/miyamotosatoshi/Desktop/Screen_shot/rails_traning/moviecinema/vendor/bundle/ruby/2.7.0/gems/strscan-3.0.3/ext/strscan
+/Users/miyamotosatoshi/.rbenv/versions/2.7.6/bin/ruby -I /Users/miyamotosatoshi/.rbenv/versions/2.7.6/lib/ruby/site_ruby/2.7.0 -r ./siteconf20220617-50198-1957xd4.rb extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/miyamotosatoshi/Desktop/Screen_shot/rails_traning/moviecinema/vendor/bundle/ruby/2.7.0/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\= clean
+
+current directory: /Users/miyamotosatoshi/Desktop/Screen_shot/rails_traning/moviecinema/vendor/bundle/ruby/2.7.0/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\=
+compiling strscan.c
+linking shared-object strscan.bundle
+
+current directory: /Users/miyamotosatoshi/Desktop/Screen_shot/rails_traning/moviecinema/vendor/bundle/ruby/2.7.0/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 strscan.bundle ./.gem.20220617-50198-1lela4e
