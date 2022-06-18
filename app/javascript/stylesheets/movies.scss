@@ -1,0 +1,207 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@media screen and (min-width:1024px) {
+  .content-box{
+    display:flex;
+    margin-right: 10px;
+    margin-left:  10px;
+  }
+  .coment-area h4 {
+    margin-left: 10px;
+    max-width: 530px;
+  }
+
+  .index-card{
+    flex-basis: 30%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .card-main{
+    margin: 0 5px;
+  }
+}
+
+
+/* タブレット */
+@media only screen and (min-width:640px) and (max-width:1023px) {
+  .content-box{
+    margin-bottom:  10px;
+    margin-right:  5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    align-items: stretch;
+  }
+
+  .card-main{
+    flex-basis: 40%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right:  5px;
+  }
+
+  .btn{
+    margin-bottom: 4px;
+  }
+
+  .index-card{
+    flex-basis: 40%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  }
+}
+
+/* スマホ */
+@media screen and (max-width:639px) {
+  .content-box{
+    margin-bottom: 8px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    align-items: stretch;
+  }
+
+  .card-main{
+    flex-basis: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .card-text{
+    display: none;
+  }
+  .coment-area h4 {
+    margin-left: 10px;
+    max-width: 530px;
+    font-size: 10px;
+  }
+
+  .index-card{
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .card-body{
+    padding: 4px 4px;
+  }
+
+  .btn{
+    margin-bottom: 4px;
+  }
+}
+
+
+// .content-box{
+//   display:flex;
+//   margin: 0 10px;
+// }
+
+.top-link {
+  text-align: left;
+  margin: 0 20px 20px 0;
+}
+
+.top-card{
+  display:flex;
+}
+
+// .index-card{
+//   flex-basis: 30%;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 10px;
+//   margin: 10px;
+// }
+
+.main{
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: center;
+ align-items: center;
+ align-content: flex-start;
+ align-items: stretch;
+
+}
+.main-index{
+  background-color: #e9e0d6;
+  width: 100%;
+  border-radius: 1%;
+  margin: 10px 0;
+  padding: 20px;
+}
+
+
+
+.show-img{
+  max-width: 350px;
+  max-height: 400px;
+}
+.show-main{
+  background-color: #3a9ad9;
+}
+
+.th{
+  width: 15%;
+}
+
+.mb-3{
+  background-color: #e9e0d6;
+}
+
+.tr-title{
+  border-bottom: dashed;
+}
+
+.show-img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input-area{
+  text-align: center;
+}
+
+.coment-area{
+  width: 80%;
+  margin:auto;
+  background-color: #e9e0d6;
+  margin-top: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+.coment-area h4 {
+  margin-left: 10px;
+  max-width: 530px;
+}
+
+.coment-area table {
+  margin-bottom: 10px;
+}
+
+.coment-area p {
+  border-bottom: dashed;
+}
+
+.card-img-top{
+  max-width: 300px;
+  max-height: 350px;
+}

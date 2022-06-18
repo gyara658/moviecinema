@@ -1,0 +1,29 @@
+<% if @page == "header" or @page == "footer"   %>
+  <% trend_name(@count, @movies_content) %>
+<% end %>
+
+<h1><%= @title %></h1>
+<% content_arr = [] %>
+<div class="main">
+  <% i = 0 %>
+  <% if  !@count.zero? %>
+    <% while i < @count %>
+      <div class="card index-card" style="width: 18rem;">
+        <% trend = @trend_list[i]  %>
+        <% content_select(trend) %>
+        <% type = @base_content %>
+        <%= image_tag "https://image.tmdb.org/t/p/w300/#{type[0]["poster_path"]}", class:"card-img-top" %>
+          <div class="card-body">
+            <h4><%= type[0]["title"] %></h4>
+            <p class="card-text"><%= type[0]["overview"].truncate(20) %></p>
+          </div>
+          <% content_arr.push(type[i]) %>
+          <%= link_to "詳細ページを開く", movies_path(content: type[0], num: 1 ), class:"btn btn-primary" %>
+      </div>
+      <% i += 1 %>
+    <% end %>
+  <% else %>
+    <p>検索結果は何もありませんでした。</p>
+    <p>別の検索ワードで試して見てください。</p>
+  <% end %>
+</div>

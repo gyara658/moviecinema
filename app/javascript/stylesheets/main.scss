@@ -1,0 +1,188 @@
+body {
+  background-color: #3a9ad9;
+}
+
+header{
+  background-color: #354458;
+  width: 100%;
+}
+
+footer{
+  background-color: #354458;
+}
+
+@media screen and (min-width:1024px) {
+  .header-item{
+    display: flex;
+    margin: 0 10px 10px 10px;
+    padding: 10px 0;
+  }
+  .user-menus{
+    margin: 0 0 0 auto;
+  }
+
+  .search_form{
+    float: right;
+    width: 400px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 2px solid #fff;
+  }
+  .user-btn{
+    margin: 0 8px;
+  }
+
+  .logo{
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+}
+
+/* タブレット */
+@media only screen and (min-width:640px) and (max-width:1023px) {
+  .header-item{
+    display: flex;
+    margin: 0 10px 10px 0px;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .search_form{
+    float: right;
+    width: 250px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 2px solid #fff;
+  }
+
+
+  .logo{
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+
+  .link-menu{
+    font-size: 14px;
+  }
+
+  .user-btn{
+    margin: 0 4px;
+    height: 35px;
+    font-size: 12px;
+  }
+  .search_area{
+    margin-left: 4px;
+  }
+
+}
+
+/* スマホ */
+@media screen and (max-width:639px) {
+  .header-item{
+    margin: 0 10px 10px 10px;
+    padding: 5px 0;
+    width: 350px;
+  }
+  .nav{
+    float: left;
+    list-style: none;
+  }
+
+  .user-menus{
+    display: flex;
+    margin: 0 0 0 auto;
+    float: right;
+  }
+  .user-item{
+    font-size: 5.5px;
+    padding: 0 2px;
+  }
+  .search_area{
+    clear: both;
+  }
+
+  .user-btn{
+    margin: 0 4px;
+    height: 28px;
+    font-size: 8px;
+  }
+
+  .search_form{
+    height: 20px;
+    font-size: 6px;
+    width: 180px;
+    margin-top: 4px;
+  }
+
+  .logo{
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 10px 5px 10px;
+  }
+  .link-menu{
+    font-size: 8px;
+  }
+
+  .nav-footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+// 共通
+
+.nav-item{
+  margin: 0 8px;
+}
+
+.header-item{
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header-munue{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user-menus{
+  display: flex;
+}
+
+.container{
+  width: 90%;
+}
+
+.user-item{
+  margin: 0 8px;
+  color:#fff;
+}
+
+.link-menu{
+  color:#fff;
+  font-weight:  bold;
+  text-align: center;
+}
+
+.nav-footer{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-item{
+  justify-content: center;
+  align-items: center;
+}

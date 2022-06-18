@@ -1,0 +1,37 @@
+<header>
+  <%= link_to root_path do %>
+    <%= image_tag "twitter_header_photo_2.png" , class:"logo"%>
+  <% end %>
+  <div class="header-item">
+    <ul class="nav">
+      <li class="nav-item">
+        <%= link_to "Top", root_path , class: "link-menu"  %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "おすすめ映画一覧",index_all_path(content: "header"), class: "link-menu"  %>
+      </li>
+    </ul>
+    <div class="user-menus">
+      <% if user_signed_in? %>
+        <button type="button" name="button" class="btn btn-primary  user-btn">
+          <%= link_to "マイページ", "/users/#{current_user.id}" , class: "user-item"  %>
+        </button>
+        <button type="button" name="button" class="btn btn-primary user-btn">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "user-item" %>
+        </button>
+      <% else %>
+        <button type="button" name="button" class="btn btn-primary user-btn">
+          <%= link_to "ログイン", new_user_session_path ,class: "user-item" %>
+        </button>
+        <button type="button" name="button" class="btn btn-primary  user-btn">
+          <%= link_to "サインイン", new_user_registration_path, class: "user-item"  %>
+        </button>
+      <% end %>
+    </div>
+    <div class="search_area">
+      <%= form_with url: search_path, method: :get,class:"search_form" ,local: true do |f| %>
+        <% f.text_field :content_code, class: "search_form", placeholder: "映画のタイトルを入力してください" %>
+      <% end %>
+    </div>
+  </div>
+</header>

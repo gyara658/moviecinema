@@ -1,0 +1,80 @@
+<% provide(:title, @user.username) %>
+<div class="user-page">
+  <div class="user-info">
+    <% if @user.image? %>
+      <%= image_tag @user.image.url(:thumb), class: "rounded-circle" %>
+    <% else %>
+      <%= gravatar_for @user %>
+    <% end %>
+    <br />
+    <strong>ユーザーネーム:</strong>
+    <%= @user.username %>
+  </div>
+
+  <div class="user-prof">
+    <strong>プロフィール:</strong><br />
+    <% if @user.profile? %>
+      <%= @user.profile %>
+    <% else %>
+      <p>よろしくお願いします！！！</p>
+    <% end %>
+  </div>
+
+  <div class="user-info">
+    <%= link_to edit_user_registration_path do %>
+      <i class="fas fa-pen">ユーザー情報編集</i>
+    <% end %>
+    <%= link_to "戻る", :back %>
+  </div>
+</div>
+
+<% if @users != nil  %>
+  <ul>
+    <% @users.each { |user| %>
+      <li><%= link_to user.username, user_path(user.id) %></li>
+    <% } %>
+  </ul>
+<% end %>
+
+
+<% if @posts != nil %>
+  <% l = @posts.length; @posts.each_with_index { |post, i|
+    # image_tag post.image
+    submitter = User.find_by(id: post.submitter)
+    sname = (submitter != nil) ? submitter.username : "Anonymous"  %>
+    <div class="review_area">
+      <div class="image_area">
+        <%= image_tag post.image ,class:"user_page_image"%><br />
+        <table class="reviw-table">
+          <tbody>
+            <tr class="tr-title">
+              <td class="td-title">No:</td>
+              <td  class="td-body"><%= (l-i).to_s %></td>
+            </tr>
+            <tr class="tr-title">
+              <td class="td-title">評価:</td>
+              <td  class="td-body"><%= post.review %></td>
+            </tr>
+            <tr class="tr-title">
+              <td class="td-title">コメント:</td>
+              <td  class="td-body"><%= post.body %>
+                <% if post.user_id == current_user.id %>
+                  <%= link_to  edit_post_path(post.id) do  %>
+                    <i class="fas fa-pen"></i>
+                  <% end %>
+                  <%= link_to  post_path(post.id), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+            <tr class="tr-title">
+              <td class="td-title">評価日時:</td>
+              <td  class="td-body"><%= post.created_at.strftime("%Y/%D:%H:%M") %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% } %>
+<% end %>

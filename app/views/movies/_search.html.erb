@@ -1,0 +1,32 @@
+<% case content %>
+  <% when "search" %>
+    <% type =  @base_content %>
+    <% name = "title" %>
+    <% title = "検索結果一覧" %>
+<% end %>
+
+
+<h1><%= title %></h1>
+
+
+<% content_arr = [] %>
+<div class="main">
+  <% i = 0 %>
+  <% if  @cnt > 0 %>
+    <% while i < @cnt %>
+      <div class="card index-card" style="width: 18rem;">
+        <%= image_tag "https://image.tmdb.org/t/p/w300/#{type[i]["poster_path"]}", class:"card-img-top" %>
+          <div class="card-body">
+            <p><%= type[i][name] %></p>
+            <p class="card-text"><%= type[i]["overview"].truncate(20) %></p>
+          </div>
+          <% content_arr.push(type[i]) %>
+          <%= link_to "詳細ページを開く", movies_path(content: type[i], num: 1 ), class:"btn btn-primary" %>
+      </div>
+      <% i += 1 %>
+    <% end %>
+  <% else %>
+    <p>検索結果は何もありませんでした。</p>
+    <p>別の検索ワードで試して見てください。</p>
+  <% end %>
+</div>

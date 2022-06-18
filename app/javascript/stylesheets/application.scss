@@ -1,0 +1,24 @@
+@import '~bootstrap/scss/bootstrap';
+@import "main.scss";
+@import "movies.scss";
+@import "user.scss";
+@import "post.scss";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+.flash{
+  width: 100%;
+  height: 30px;
+  font-size: 18px;
+  text-align: center;
+  padding: 0;
+  z-index: 1;
+}
+
+.notice{
+  background-color: #65A2FF;
+}
+
+.alart_flash{
+  color: #FFFFFF;
+  background-color: #FF0000;
+}

@@ -1,0 +1,56 @@
+.user_page_image{
+  max-width: 200px;
+  max-height: 250px;
+  display: table;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.review_area{
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  border-bottom: medium solid;
+  padding-bottom: 30px;
+}
+
+.reviw-table{
+}
+
+.image_area{
+  display: flex;
+}
+
+.td-title{
+  width: 100px;
+}
+
+.td-body{
+  width: 600px;
+}
+
+.tr-title{
+  border-bottom: dashed;
+}
+
+.image_area{
+  background-color: #e9e0d6;
+  padding: 15px 15px;
+  border-radius:10px;
+}
+
+.user-page {
+  border-bottom: dashed;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: #e9e0d6;
+}
+
+.user-info {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.user-prof {
+  padding: 8px 32px;
+}

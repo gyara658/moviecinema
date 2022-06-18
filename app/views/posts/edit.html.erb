@@ -1,0 +1,11 @@
+<h1>編集画面</h1>
+<div class="">
+<%= image_tag @post.image, class:"show-img rounded mx-auto d-block" %>
+  <div class="edit-area">
+    <%= form_with model: @post do |f| %>
+      <%= f.text_area :body, size: "60x5" %><br />
+      <%= f.select :review, {"1":1, "2":2, "3":3, "4":4, "5":5,"6":6,"7":7, "8":8, "9":9,"10":10} %>
+      <%= f.submit "更新する" %>
+    <% end %>
+  </div>
+</div>

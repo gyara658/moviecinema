@@ -1,0 +1,93 @@
+<% type = @content ? type = @content : type = cont  %>
+<% image = "https://image.tmdb.org/t/p/w300/#{type["poster_path"]}" %>
+<% title = type["title"]  %>
+<% release_date = type["release_date"] %>
+<% overview = type["overview"] %>
+<% vote_average = type["vote_average"] %>
+<% vote_count = type["vote_count"] %>
+<% poster_path = type["poster_path"] %>
+<% content = {"image": image,"title":title,"release_date": release_date,
+                "overview": overview,"vote_average":vote_average,
+                "vote_count":vote_count, "poster_path": poster_path } %>
+
+
+
+<div class="card mb-3 show-box">
+  <%= image_tag image, class:"show-img rounded mx-auto d-block" %>
+  <table class="table">
+    <tbody>
+      <tr class="tr-title">
+        <th scope="row" class="th">タイトル</th>
+        <td><h4><%= title %></h4></td>
+      </tr>
+      <tr class="tr-title">
+        <th scope="row" class="th">公開日</th>
+        <td><%= release_date %></td>
+      </tr>
+      <tr class="tr-title">
+        <th scope="row" class="th">説明</th>
+        <td><%= overview %></td>
+      </tr>
+      <tr class="tr-title">
+        <th scope="row" class="th">評価</th>
+        <td><%= vote_average %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "戻る", :back %>
+</div>
+
+
+
+<% if user_signed_in? %>
+  <div class="input-area">
+    <%= form_with model: Post.new do |f| %>
+      <%= f.text_area :body, placeholder: "コメントを入力してください",  size: "60x5" %><br />
+      <%= f.hidden_field :id, {value: current_user.id} %>
+      <%= f.select :review, {"1":1, "2":2, "3":3, "4":4, "5":5,"6":6,"7":7, "8":8, "9":9,"10":10} %>
+      <%= f.hidden_field :image, {value: image}  %>
+      <%= f.hidden_field :poster_path, {value: poster_path}  %>
+      <%= f.submit "送信" %>
+    <% end %>
+  </div>
+
+
+  <div class="coment-area">
+  <% if @posts != nil %>
+    <% user =  @users.to_h %>
+    <% bubble_sort(@posts) %>
+    <% len = @posts.length; @posts.each_with_index { |post, i| %>
+      <% if post[7] ==  poster_path %>
+        <table>
+          <tr>
+            <th scope="row" class="th">No:</th>
+            <td><h4><%= (len-i).to_s %></h4></td>
+          </tr>
+          <tr>
+            <th scope="row" class="th">評価</th>
+            <td><h4><%= post[1] %></h4></td>
+          </tr>
+          <tr>
+            <th scope="row" class="th">コメント</th>
+            <td><h4><%= post[3] %></h4>
+              <% if post[0] == current_user.id %>
+                <%= link_to  edit_post_path(post[5]) do  %>
+                  <i class="fas fa-pen"></i>
+                <% end %>
+                <%= link_to  post_path(post[5]), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="th">ユーザー</th>
+            <td><h4><%= link_to user[post[0]], "/users/#{post[0]}" %></h4></td>
+          </tr>
+        </table>
+        <p><%= post[6].strftime("%Y/%D:%H:%M") %></p>
+      <% end %>
+    <% } %>
+  <% end %>
+  </div>
+<% end %>

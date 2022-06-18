@@ -1,0 +1,39 @@
+<% case content %>
+  <% when "movie" %>
+    <% type =  @movies_content %>
+    <% name = "title" %>
+    <% title = "映画" %>
+    <% count = @count %>
+<% end %>
+
+
+<% i = 0  %>
+<% mtrend_name = [] %>
+<% while i < @count %>
+  <% mtrend_name.push(type[i][name]) %>
+  <% i += 1 %>
+<% end %>
+
+<% t = 0 %>
+<% content_arr = [] %>
+<div class="main-index">
+  <h2>人気の<%= title %></h2>
+  <div class="content-box">
+    <% t = 0 %>
+    <% while t < 5 %>
+      <% trend = mtrend_name[t]  %>
+      <% content_select(trend) %>
+      <div class="card card-main" style="width: 18rem;">
+        <%= image_tag "https://image.tmdb.org/t/p/w300/#{@base_content[0]["poster_path"]}", class:"card-img-top" %>
+          <div class="card-body">
+            <h4><%= @base_content[0][name] %></h4>
+            <p class="card-text"><%= @base_content[0]["overview"].truncate(20) %>.</p>
+          </div>
+          <% content_arr.push(@base_content[0]) %>
+          <%= link_to "詳細ページを開く", movies_path(content: @base_content[0], num: 1 ), class:"btn btn-primary" %>
+      </div>
+      <% t += 1 %>
+    <% end %>
+  </div>
+  <%= link_to "おすすめの#{title}一覧", index_all_path(trend_list: mtrend_name, content: "index" ), class: "top-link" %>
+</div>
